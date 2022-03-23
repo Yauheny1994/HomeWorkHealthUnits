@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class HealthUnify {
     WebDriver driver;
 
-    /*
+    /* Задание:
     1. Зайти на сайт https://healthunify.com/bmicalculator/
     2. Ввести в поле масса вес
     3. Выбрать еденицу измерения
