@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 public class HealthUnify {
@@ -21,7 +22,7 @@ public class HealthUnify {
 
     @Test
     public void checkStarvation() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resource/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         driver = new ChromeDriver();
         driver.get("https://healthunify.com/bmicalculator/");
         driver.findElement(By.xpath("//input[@name=\"wg\"]")).sendKeys("11");
@@ -99,6 +100,7 @@ public class HealthUnify {
         Assert.assertEquals(category, "Your category is Obese");
     }
 
+    @AfterClass
     public void closeBrowser() {
         driver.quit();
     }
