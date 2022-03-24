@@ -10,16 +10,6 @@ import org.testng.annotations.Test;
 public class HealthUnify {
     WebDriver driver;
 
-    /* Задание:
-    1. Зайти на сайт https://healthunify.com/bmicalculator/
-    2. Ввести в поле масса вес
-    3. Выбрать еденицу измерения
-    4. Ввести рост
-    5.Нажать кнопку рассчитать
-    6. Проверить еденицу измерения
-    7. Проверить результат
-     */
-
     @Test
     public void checkStarvation() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
@@ -42,7 +32,7 @@ public class HealthUnify {
 
     @Test
     public void checkNormal() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resource/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         driver = new ChromeDriver();
         driver.get("https://healthunify.com/bmicalculator/");
         driver.findElement(By.xpath("//input[@name=\"wg\"]")).sendKeys("57");
@@ -62,7 +52,7 @@ public class HealthUnify {
 
     @Test
     public void checkOverweight() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resource/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         driver = new ChromeDriver();
         driver.get("https://healthunify.com/bmicalculator/");
         driver.findElement(By.xpath("//input[@name=\"wg\"]")).sendKeys("76");
@@ -80,9 +70,10 @@ public class HealthUnify {
         Assert.assertEquals(category, "Your category is Overweight");
     }
 
+
     @Test
     public void checkObese() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resource/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         driver = new ChromeDriver();
         driver.get("https://healthunify.com/bmicalculator/");
         driver.findElement(By.xpath("//input[@name=\"wg\"]")).sendKeys("90");
